@@ -1,0 +1,65 @@
+{
+  "sourceType": "unambiguous",
+  "compact": false,
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "exclude": [
+          // "@babel/plugin-transform-classes"
+        ]
+      }
+    ],
+    [
+      "minify",
+      {
+        "removeConsole": true,
+        "removeDebugger": true,
+        "undefinedToVoid": false,
+        "keepClassName": true,
+        "keepFnName": true,
+        "builtIns": false,
+        "evaluate": false,
+        "mangle": false
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-private-methods",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-transform-modules-commonjs",
+    "@babel/plugin-transform-modules-umd",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "~database": "./src/database",
+          "~constants": "./src/constants",
+          "~helpers": "./src/helpers",
+          "~controllers": "./src/controllers",
+          "~middlewares": "./src/middlewares",
+          "~models": "./src/models",
+          "~views": "./src/views",
+          "~jobs": "./src/jobs",
+          "~routes": "./src/routes",
+          "~third-party": "./src/third-party",
+          "~services": "./src/services"
+        }
+      }
+    ]
+  ],
+  "comments": false,
+  "targets": {
+    "chrome": "58",
+    "ie": "11"
+  },
+  "assumptions": {
+    "setPublicClassFields": true,
+    "noDocumentAll": true,
+    "noClassCalls": true,
+    "constantReexports": true
+  }
+}

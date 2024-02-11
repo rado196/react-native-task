@@ -1,0 +1,10 @@
+{
+  "execArgs": ["--trace-warnings", "--unhandled-rejections=strict"],
+  "watch": ["src", ".env", "app.js"],
+  "quiet": true,
+  "ext": "js",
+  "delay": 100,
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
